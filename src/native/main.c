@@ -7,6 +7,7 @@
 #include <mono/metadata/assembly.h>
 #include <mono/metadata/class.h>
 
+
 static const char* trusted_assemblies[] = { 
 #include "tpa.h"
 #undef TRUSTED_PLATFORM_ASSEMBLY

@@ -8,9 +8,9 @@ A sample suite of projects to show how to embed the .NET 6 MonoVM in a native de
 
 * Only works on OSX or Debian 11, or Ubuntu 20.04 (other recent Linux distros may work too)  
    This is a limitation of the sample, not a limitation of the MonoVM itself.  Embedding on other platforms where Mono works (Windows, Android, iOS) is possible.  [PRs welcome!](https://github.com/lambdageek/monovm-embed-sample/compare)
-* It needs the mono embedding hearders and libraries which are currently not included in the runtime packs ([dotnet/runtime#46461](https://github.com/dotnet/runtime/issues/46461)),
-  the sample includes them in the `vendor/mono-headers/` and `vendor/mono-libs/` directory, but this is not a good idea.
-* Until [dotnet/runtime#49661](https://github.com/dotnet/runtime/issues/49661) is fixed, Linux builds need `patchelf`
+* It needs the mono embedding hearders and libraries which are currently not included in the runtime packs ([dotnet/runtime#46461](https://github.com/dotnet/runtime/issues/46461)),                       
+  the sample includes them in the `vendor/mono-headers/` and `vendor/mono-libs/` directory, but this is not a good idea.                            
+* Until [dotnet/runtime#49661](https://github.com/dotnet/runtime/issues/49661) is fixed, Linux builds need `patchelf`                       
 
 ### Help Wanted ###
 
@@ -20,20 +20,20 @@ A sample suite of projects to show how to embed the .NET 6 MonoVM in a native de
 
 ## Prerequisites ##
 
-* .NET 6 SDK
-* A C compiler
-* GNU Make
-* (Linux only) [`patchelf`](https://github.com/NixOS/patchelf) (Ubuntu has a .deb package)
-* (Windows only) ['sh.exe'](https://stackoverflow.com/a/37478310/16785067) (Installation details)
-
+* .NET 6 SDK               
+* A C compiler              
+* GNU Make                
+* (Linux only) [`patchelf`](https://github.com/NixOS/patchelf) (Ubuntu has a .deb package)                              
+* (Windows only) [`sh.exe`](https://stackoverflow.com/a/37478310/16785067) (Installation details)                                      
+ 
 ## Building ##
-*(Windows) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are build automatically)
-*(Other Supported) Just run `make` from the toplevel folder
+*( Windows) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are build automatically)                                  
+* (Other Supported) Just run `make` from the toplevel folder                                 
 
 
 ## Running ##
-*(Windows) Just click the green play button
-*(Other Supported) Run `make run`, or `out/native/main` directly. (You may need to set `LD_LIBRARY_PATH` on Linux)
+* (Windows) Just click the green play button                                                
+* (Other Supported) Run `make run`, or `out/native/main` directly. (You may need to set `LD_LIBRARY_PATH` on Linux)                                              
 
 Expected output:
 
