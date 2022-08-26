@@ -114,7 +114,11 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\native\generated</Command>
+      <Command>dotnet publish $(SolutionDir)src\CsharpSample\CsharpSample.csproj -r win-x86 -f net6.0 -p:TargetFramework=net6.0 --self-contained 
+
+dotnet publish $(SolutionDir)src\GetRuntimePack\GetRuntimePack.csproj -r win-x86 -f net6.0 -p:TargetFramework=net6.0 --self-contained 
+
+sh $(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\CsharpSample\bin\Debug\net6.0\win-x86\publish &gt; $(SolutionDir)out\native\generated\tpa.h                  </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,7 +142,11 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\native\generated</Command>
+      <Command>dotnet publish $(SolutionDir)src\CsharpSample\CsharpSample.csproj -r win-x86 -f net6.0 -p:TargetFramework=net6.0 --self-contained 
+
+dotnet publish $(SolutionDir)src\GetRuntimePack\GetRuntimePack.csproj -r win-x86 -f net6.0 -p:TargetFramework=net6.0 --self-contained 
+
+sh $(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\CsharpSample\bin\Debug\net6.0\win-x86\publish &gt; $(SolutionDir)out\native\generated\tpa.h                  </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -158,7 +166,7 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\native\generated</Command>
+      <Command>not implemented</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -182,7 +190,7 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src\native\gen-managed.sh $(SolutionDir)out\native\generated</Command>
+      <Command>not implemented</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

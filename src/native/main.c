@@ -57,8 +57,6 @@ int main(void)
 	const char *prop_keys[] = {"TRUSTED_PLATFORM_ASSEMBLIES"};
 	char *prop_values[] = {tpa_list};
 	int nprops = sizeof(prop_keys)/sizeof(prop_keys[0]);
-	mono_set_dirs("C:\\Program Files (x86)\\Mono\\lib",
-		"C:\\Program Files(x86)\\Mono\\etc");
 	monovm_initialize (nprops, (const char**) &prop_keys, (const char**) &prop_values);
 	free (tpa_list);
 	MonoDomain *root_domain = mono_jit_init_version ("embedder_sample", FRAMEWORK_VERSION);
