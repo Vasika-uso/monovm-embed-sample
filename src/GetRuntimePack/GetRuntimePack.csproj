@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- FIXME: Update for net6.0 -->
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- This plus a non-empty $(RuntimeIdentifier) are enough to choose Mono -->
+  <PropertyGroup>
+    <UseMonoRuntime>true</UseMonoRuntime>
+  </PropertyGroup>
+
+  <Target Name="EchoRuntimeLocation" AfterTargets="ResolveFrameworkReferences">
+    <Error Condition="'$(RuntimeIdentifier)' == ''" Message="Need to set RuntimeIdentifier to the target platform RID" />
+    <ItemGroup>
+      <ProbablyMono Include="@(ResolvedRuntimePack)" Condition="'%(ResolvedRuntimePack.FrameworkName)' == 'Microsoft.NETCore.App'" />
+    </ItemGroup>
+    <Error Condition="@(ProbablyMono->Count()) != 1" Text="Expected to get exactly one Microsoft.NETCore.App.Mono resolved runtime pack, got @(ProbablyMono->Count())" />
+    <PropertyGroup>
+      <LikelyMono>@(ProbablyMono)</LikelyMono>
+    </PropertyGroup>
+    <Error Condition="!$(LikelyMono.Contains('Microsoft.NETCore.App.Runtime.Mono'))" Message="Expected '@(ProbablyMono)' to include 'Microsoft.NETCore.App.Runtime.Mono' in the name." />
+    <Message Importance="High" Text="I think the runtime pack %(ProbablyMono.Identity) is in: %(ProbablyMono.PackageDirectory)"/>
+    <WriteLinesToFile File="$(OutputPath)runtime-pack-dir.txt" Lines="%(ProbablyMono.PackageDirectory)" />
+  </Target>
+
+</Project>
