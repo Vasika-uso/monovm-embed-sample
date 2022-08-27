@@ -17,7 +17,7 @@ static const char* trusted_assemblies[] = {
 };
 static int num_trusted_assemblies = (sizeof(trusted_assemblies) / sizeof(trusted_assemblies[0])) - 1;//minus the random string
 
-
+#define CORELIB_FULL_PATH "C:\\Users\\user\\Documents\\GitHub\\MonoVMEmbed\\System.Private.Corelib.dll"
 #ifdef _MSC_VER
 #define PATH_SEP_CHAR ';'
 #else
@@ -34,7 +34,6 @@ static int num_trusted_assemblies = (sizeof(trusted_assemblies) / sizeof(trusted
 char* make_tpa_list (void)
 {
 	size_t len = 0;
-	
 	len += strlen(CORELIB_FULL_PATH);
 	for (int i = 0; i < num_trusted_assemblies; ++i) {
 		len += strlen (trusted_assemblies [i]);

@@ -27,7 +27,7 @@ A sample suite of projects to show how to embed the .NET 6 MonoVM in a native de
 * (Windows only) [`sh.exe`](https://stackoverflow.com/a/37478310/16785067) (Installation details)                                      
  
 ## Building ##
-*( Windows) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are build automatically)                                  
+* (Windows) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are built automatically)                                  
 * (Other Supported) Just run `make` from the toplevel folder                                 
 
 
@@ -61,7 +61,7 @@ Build a checkout of dotnet/runtime using something like
 
 Verify that `artifacts/bin/microsoft.netcore.app.runtime.osx-x64/Release` (or
 other RID and configuration) exists.  It should contain a
-`runtimes/osx-x64/native` directory.  The makefile dependson it.
+`runtimes/osx-x64/native` directory.  The makefile depends on it.
 
 ### Local build limitations ###
 

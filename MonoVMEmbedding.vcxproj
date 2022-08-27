@@ -107,6 +107,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,7 +115,8 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src/native/wgen-managed.bat  </Command>
+      <Command>cd $(SolutionDir)src\native
+wgen-managed.bat</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,6 +131,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +141,8 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>$(SolutionDir)src/native/wgen-managed.bat  </Command>
+      <Command>cd $(SolutionDir)src\native
+wgen-managed.bat</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
