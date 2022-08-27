@@ -101,7 +101,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PREPROCESSORDEF_VISUAL_STUDIO;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <CompileAs>CompileAsC</CompileAs>
@@ -115,8 +115,10 @@
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd $(SolutionDir)src\native
-wgen-managed.bat</Command>
+      <Command>cd $(SolutionDir)src\native               
+wgen-managed.bat          
+cd $(SolutionDir)src\native       
+wgen-corelib.bat          </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,7 +127,7 @@ wgen-managed.bat</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PREPROCESSORDEF_VISUAL_STUDIO;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <CompileAs>CompileAsC</CompileAs>
@@ -141,15 +143,17 @@ wgen-managed.bat</Command>
       <AdditionalDependencies>coreclr.import.lib;mono-component-debugger-static.lib;mono-component-debugger-stub-static.lib;mono-component-diagnostics_tracing-static.lib;mono-component-diagnostics_tracing-stub-static.lib;mono-component-hot_reload-static.lib;mono-component-hot_reload-stub-static.lib;mono-component-marshal-ilgen-static.lib;mono-component-marshal-ilgen-stub-static.lib;mono-profiler-aot.lib;monosgen-2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd $(SolutionDir)src\native
-wgen-managed.bat</Command>
+      <Command>cd $(SolutionDir)src\native               
+wgen-managed.bat          
+cd $(SolutionDir)src\native       
+wgen-corelib.bat          </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PREPROCESSORDEF_VISUAL_STUDIO;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <CompileAs>CompileAsC</CompileAs>
@@ -171,7 +175,7 @@ wgen-managed.bat</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PREPROCESSORDEF_VISUAL_STUDIO;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <CompileAs>CompileAsC</CompileAs>

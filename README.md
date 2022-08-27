@@ -24,15 +24,15 @@ A sample suite of projects to show how to embed the .NET 6 MonoVM in a native de
 * A C compiler              
 * GNU Make                
 * (Linux only) [`patchelf`](https://github.com/NixOS/patchelf) (Ubuntu has a .deb package)                              
-* (Windows only) [`sh.exe`](https://stackoverflow.com/a/37478310/16785067) (Installation details)                                      
+* (Windows **>=7** only) [`sh.exe`](https://stackoverflow.com/a/37478310/16785067) (Installation details)                                      
  
 ## Building ##
-* (Windows) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are built automatically)                                  
+* (Windows **>=7**) Open the .sln file using Visual Studio 2022 and build native.vcxproj (the other are built automatically)                                  
 * (Other Supported) Just run `make` from the toplevel folder                                 
 
 
 ## Running ##
-* (Windows) Just click the green play button                                                
+* (Windows **>=7**) Just click the green play button                                                
 * (Other Supported) Run `make run`, or `out/native/main` directly. (You may need to set `LD_LIBRARY_PATH` on Linux)                                              
 
 Expected output:

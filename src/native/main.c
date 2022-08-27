@@ -17,7 +17,13 @@ static const char* trusted_assemblies[] = {
 };
 static int num_trusted_assemblies = (sizeof(trusted_assemblies) / sizeof(trusted_assemblies[0])) - 1;//minus the random string
 
-#define CORELIB_FULL_PATH "C:\\Users\\user\\Documents\\GitHub\\MonoVMEmbed\\System.Private.Corelib.dll"
+
+#ifdef PREPROCESSORDEF_VISUAL_STUDIO
+#include "wincoretpa.h"
+#endif
+//#else : Makefile def
+
+
 #ifdef _MSC_VER
 #define PATH_SEP_CHAR ';'
 #else
