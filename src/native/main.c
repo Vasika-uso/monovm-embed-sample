@@ -9,9 +9,9 @@
 
 
 static const char* trusted_assemblies[] = { 
-#include "tpa.h"
 #undef TRUSTED_PLATFORM_ASSEMBLY
 #define TRUSTED_PLATFORM_ASSEMBLY(x) x,
+#include "tpa.h"
 "TRUSTED_PLATFORM_ASSEMBLY" // last random string because ' x,' has a surplus ' ,' which creates a syntax error
 #undef TRUSTED_PLATFORM_ASSEMBLY
 };

@@ -18,6 +18,8 @@ powershell -Command "(gc ./out/native/generated/tpa.h) -replace '/e/', 'E:/' | O
 powershell -Command "(gc ./out/native/generated/tpa.h) -replace '/f/', 'F:/' | Out-File -encoding ASCII ./out/native/generated/tpa.h"
 powershell -Command "(gc ./out/native/generated/tpa.h) -replace '/g/', 'G:/' | Out-File -encoding ASCII ./out/native/generated/tpa.h"
 powershell -Command "(gc ./out/native/generated/tpa.h) -replace '/h/', 'H:/' | Out-File -encoding ASCII ./out/native/generated/tpa.h"
+powershell -Command "(gc ./out/native/generated/tpa.h) -replace '/', '\\' | Out-File -encoding ASCII ./out/native/generated/tpa.h"
+powershell -Command "(gc ./out/native/generated/tpa.h) -replace '\\\\\\\\ ', '//' | Out-File -encoding ASCII ./out/native/generated/tpa.h"
 
  
  
